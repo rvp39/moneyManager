@@ -8,12 +8,34 @@
     <title>Money Management app</title>
 </head>
 <body>
-    <div class="container" id="form">
-        <form action="">
-            <label >Ammount <input type="text"></label>
-            <label >Date <input type="date" name="Date" id=""></label>
-            <label >Comments <input type="text" name="" id=""></label>
-        </form>
+    <div id="firsthalf">
+        <div class="container" id="form">
+            <form action="/" method="POST">
+                <label >Ammount <input type="text" name="Ammount"></label>
+                <label >Date <input type="date" name="Date" id=""></label>
+                <label >Comments <input type="text" name="Comments" id=""></label>
+                <input type="submit" value="Add">
+            </form>
+        
+        </div>
+    </div>
+    <div id="secondhalf">    
+        <div id="table">
+            <table border="solid">
+                <tr>
+                    <td>Date</td>
+                    <td>Ammount</td>
+                    <td>Comments</td>
+                </tr>
+                <% data.forEach(function(data){%>
+                    <tr>
+                        <td><%=data.Date%></td>
+                        <td><%=data.Ammount%></td>
+                        <td><%=data.Comments%></td>
+                    </tr>
+                <%});%>
+            </table>
+        </div>
     </div>
 </body>
 </html>
